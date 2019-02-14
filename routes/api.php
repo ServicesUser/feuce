@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Hashids\Hashids;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,8 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::get('a/{a}',function($a){
+    $aux = new Hashids('',5,'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
+    return (['encode'=>$aux->encode($a),'decode'=>$aux->decode($aux->encode($a))]);
 });
