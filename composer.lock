@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "content-hash": "3206a79b629aab75734a219f171d42ad",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -550,6 +550,72 @@
             "time": "2018-12-04T20:46:45+00:00"
         },
         {
+            "name": "hashids/hashids",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ivanakimov/hashids.php.git",
+                "reference": "b6c61142bfe36d43740a5419d11c351dddac0458"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ivanakimov/hashids.php/zipball/b6c61142bfe36d43740a5419d11c351dddac0458",
+                "reference": "b6c61142bfe36d43740a5419d11c351dddac0458",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0"
+            },
+            "suggest": {
+                "ext-bcmath": "Required to use BC Math arbitrary precision mathematics (*).",
+                "ext-gmp": "Required to use GNU multiple precision mathematics (*)."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hashids\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Akimov",
+                    "email": "ivan@barreleye.com",
+                    "homepage": "https://twitter.com/IvanAkimov"
+                },
+                {
+                    "name": "Vincent Klaiber",
+                    "email": "hello@vinkla.com",
+                    "homepage": "https://vinkla.com"
+                }
+            ],
+            "description": "Generate short, unique, non-sequential ids (like YouTube and Bitly) from numbers",
+            "homepage": "http://hashids.org/php",
+            "keywords": [
+                "bitly",
+                "decode",
+                "encode",
+                "hash",
+                "hashid",
+                "hashids",
+                "ids",
+                "obfuscate",
+                "youtube"
+            ],
+            "time": "2018-03-12T16:30:09+00:00"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "v0.2",
             "source": {
@@ -959,6 +1025,68 @@
                 "psysh"
             ],
             "time": "2018-10-12T19:39:35+00:00"
+        },
+        {
+            "name": "laraveles/spanish",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Laraveles/spanish.git",
+                "reference": "1b9df578047b9fddc786d54381b643ea53dfff3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Laraveles/spanish/zipball/1b9df578047b9fddc786d54381b643ea53dfff3a",
+                "reference": "1b9df578047b9fddc786d54381b643ea53dfff3a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "~5.4.0|~5.5.0|~5.6.0|~5.7.0",
+                "illuminate/support": "~5.4.0|~5.5.0|~5.6.0|~5.7.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.4",
+                "phpunit/phpunit": "^5.6|^6.3|^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laraveles\\Spanish\\SpanishServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laraveles\\Spanish\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Israel Ortuño",
+                    "email": "ai.ortuno@gmail.com"
+                },
+                {
+                    "name": "Cesar Garcia",
+                    "email": "cesargb@gmail.com",
+                    "homepage": "https://github.com/cesargb",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Conjunto de traducciones en español para Laravel",
+            "homepage": "https://github.com/Laraveles/spanish",
+            "keywords": [
+                "laravel",
+                "laraveles",
+                "spanish",
+                "traduccion"
+            ],
+            "time": "2019-01-31T23:38:18+00:00"
         },
         {
             "name": "lcobucci/jwt",
