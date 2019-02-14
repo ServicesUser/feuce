@@ -72,9 +72,6 @@ $m--transition: (
     )
 )!default;
 
-//== UI State Colors
-$m--brand-color: #716aca !default;
-$m--brand-inverse-color: #ffffff !default; 
 
 $m--state-colors: (
     // metronic states
@@ -95,29 +92,29 @@ $m--state-colors: (
         inverse: #ffffff 
     ),
     focus: (
-        base: #9816f4,
-        inverse: #ffffff 
+            base: $m--brand-color,
+            inverse: $m--brand-inverse-color
     ),
 
     // bootstrap states
     primary: (
-        base: #5867dd,
-        inverse: #ffffff
+            base: $m--brand-color,
+            inverse: $m--brand-inverse-color
     ),
     success: (
-        base: #34bfa3,
+        base: $green,
         inverse: #ffffff
     ),
     info: (
-        base: #36a3f7,
+        base: $cyan,
         inverse: #ffffff
     ),
     warning: (
-        base: #ffb822,
+        base: $orange,
         inverse: #111111
     ),
     danger: (
-        base: #f4516c,
+        base: $red,
         inverse: #ffffff
     )    
 )!default;
@@ -223,17 +220,17 @@ $m--typography-colors: (
 
         // link color
         link: (
-            lighten5: lighten(#5b52ce, 30%), // access to this color value calling get-color function as get-color(light, link, -----) in SASS code
-            lighten4: lighten(#5b52ce, 25%), // access to this color value calling get-color function as get-color(light, link, ----) in SASS code
-            lighten3: lighten(#5b52ce, 20%), // access to this color value calling get-color function as get-color(light, link, ---) in SASS code
-            lighten2: lighten(#5b52ce, 15%), // access to this color value calling get-color function as get-color(light, link, --) in SASS code
-            lighten1: lighten(#5b52ce, 10%), // access to this color value calling get-color function as get-color(light, link, -) in SASS code
-            base:     #5b52ce, 
-            darken1:  darken(#5b52ce, 10%),  // access to this color value calling get-color function as get-color(light, link, +++++) in SASS code
-            darken2:  darken(#5b52ce, 15%),  // access to this color value calling get-color function as get-color(light, link, ++++) in SASS code
-            darken3:  darken(#5b52ce, 20%),  // access to this color value calling get-color function as get-color(light, link, +++) in SASS code
-            darken4:  darken(#5b52ce, 25%),  // access to this color value calling get-color function as get-color(light, link, ++) in SASS code
-            darken5:  darken(#5b52ce, 30%)   // access to this color value calling get-color function as get-color(light, link, +) in SASS code
+            lighten5: lighten($m--brand-color, 30%), // access to this color value calling get-color function as get-color(light, link, -----) in SASS code
+            lighten4: lighten($m--brand-color, 25%), // access to this color value calling get-color function as get-color(light, link, ----) in SASS code
+            lighten3: lighten($m--brand-color, 20%), // access to this color value calling get-color function as get-color(light, link, ---) in SASS code
+            lighten2: lighten($m--brand-color, 15%), // access to this color value calling get-color function as get-color(light, link, --) in SASS code
+            lighten1: lighten($m--brand-color, 10%), // access to this color value calling get-color function as get-color(light, link, -) in SASS code
+            base:     $m--brand-color,
+            darken1:  darken($m--brand-color, 10%),  // access to this color value calling get-color function as get-color(light, link, +++++) in SASS code
+            darken2:  darken($m--brand-color, 15%),  // access to this color value calling get-color function as get-color(light, link, ++++) in SASS code
+            darken3:  darken($m--brand-color, 20%),  // access to this color value calling get-color function as get-color(light, link, +++) in SASS code
+            darken4:  darken($m--brand-color, 25%),  // access to this color value calling get-color function as get-color(light, link, ++) in SASS code
+            darken5:  darken($m--brand-color, 30%)   // access to this color value calling get-color function as get-color(light, link, +) in SASS code
         ),
 
         // icon color
@@ -316,17 +313,17 @@ $m--typography-colors: (
 
         // link color
         link: (
-            lighten5: lighten(#5b52ce, 30%), // access to this color value calling get-color function as get-color(dark, link, +++++) in SASS code
-            lighten4: lighten(#5b52ce, 25%), // access to this color value calling get-color function as get-color(dark, link, ++++) in SASS code
-            lighten3: lighten(#5b52ce, 20%), // access to this color value calling get-color function as get-color(dark, link, +++) in SASS code
-            lighten2: lighten(#5b52ce, 15%), // access to this color value calling get-color function as get-color(dark, link, ++) in SASS code
-            lighten1: lighten(#5b52ce, 10%), // access to this color value calling get-color function as get-color(dark, link, +) in SASS code
-            base:     #d3d4ea,               // access to this color value calling get-color function as get-color(dark, link) in SASS code
-            darken1:  darken(#5b52ce, 10%),  // access to this color value calling get-color function as get-color(dark, link, -) in SASS code
-            darken2:  darken(#5b52ce, 15%),  // access to this color value calling get-color function as get-color(dark, link, --) in SASS code
-            darken3:  darken(#5b52ce, 20%),  // access to this color value calling get-color function as get-color(dark, link, ---) in SASS code
-            darken4:  darken(#5b52ce, 25%),  // access to this color value calling get-color function as get-color(dark, link, ----) in SASS code
-            darken5:  darken(#5b52ce, 30%)   // access to this color value calling get-color function as get-color(dark, link, -----) in SASS code 
+            lighten5: lighten($m--brand-color, 30%), // access to this color value calling get-color function as get-color(dark, link, +++++) in SASS code
+            lighten4: lighten($m--brand-color, 25%), // access to this color value calling get-color function as get-color(dark, link, ++++) in SASS code
+            lighten3: lighten($m--brand-color, 20%), // access to this color value calling get-color function as get-color(dark, link, +++) in SASS code
+            lighten2: lighten($m--brand-color, 15%), // access to this color value calling get-color function as get-color(dark, link, ++) in SASS code
+            lighten1: lighten($m--brand-color, 10%), // access to this color value calling get-color function as get-color(dark, link, +) in SASS code
+            base:     $m--brand-inverse-color,               // access to this color value calling get-color function as get-color(dark, link) in SASS code
+            darken1:  darken($m--brand-color, 10%),  // access to this color value calling get-color function as get-color(dark, link, -) in SASS code
+            darken2:  darken($m--brand-color, 15%),  // access to this color value calling get-color function as get-color(dark, link, --) in SASS code
+            darken3:  darken($m--brand-color, 20%),  // access to this color value calling get-color function as get-color(dark, link, ---) in SASS code
+            darken4:  darken($m--brand-color, 25%),  // access to this color value calling get-color function as get-color(dark, link, ----) in SASS code
+            darken5:  darken($m--brand-color, 30%)   // access to this color value calling get-color function as get-color(dark, link, -----) in SASS code
         ),
 
         // icon color

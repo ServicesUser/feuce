@@ -1,14 +1,16 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Poppins|Roboto|Nunito');
+
+//iconos
+@import "./src/vendors/fontawesome5/css/all.css";
+@import "./src/vendors/flaticon/css/flaticon.css";
+@import "./src/vendors/line-awesome/css/line-awesome.css";
 
 // Variables
 @import 'variables';
-
-// Tema
+//@import "../../../metronic/metronic_v5.5/dist/demo2/assets/vendors/base/vendors.bundle.css";hhjjjjjjjj
+//@import "../../../metronic/metronic_v5.5/dist/default/assets/demo/default/base/style.bundle.css";
+//@import "./src/vendors/metronic/css/styles.css";
 @import "./src/sass/demo/demo2/style";
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
