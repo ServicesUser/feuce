@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{config('app.name')}} | @yield('titulo')</title>
     <meta name="csrf-token" content="{{csrf_token()}}">
-    <link href="{{mix('css/unos.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body style="background-image: url({{asset('images/logos/background.png')}})"  class="m-page--fluid m-page--loading-enabled m-page--loading m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default">
     <div class="m-page-loader m-page-loader--base">
@@ -17,11 +17,11 @@
             </span>
         </div>
     </div>
-    <div class="m-grid m-grid--hor m-grid--root m-page" id="usuario">
+    <div class="m-grid m-grid--hor m-grid--root m-page" id="app">
     @yield('cuerpo')
     </div>
-<script src="{{mix('js/unos.vendor.js')}}" type="text/javascript"></script>
-<script src="{{mix('js/unos.js')}}" type="text/javascript"></script>
+<script src="{{mix('js/app.js')}}" type="text/javascript"></script>
+    @yield('scripts')
     @component('componentes.soporte')
     @endcomponent
 </body>
