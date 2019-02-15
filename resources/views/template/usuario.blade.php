@@ -8,21 +8,17 @@
     <meta name="csrf-token" content="{{csrf_token()}}">
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
 </head>
-<body style="background-image: url({{asset('images/logos/background.png')}})"  class="m-page--fluid m-page--loading-enabled m-page--loading m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default">
+<body class="m-page--fluid m-page--loading-enabled m-page--loading m-header--fixed m-header--fixed-mobile m-aside-right--enabled m-aside--offcanvas-default">
     <div class="m-page-loader m-page-loader--base">
-        <div class="m-blockui">
-            <span>Cargando</span>
-            <span>
-                <div class="m-loader m-loader--brand"></div>
-            </span>
-        </div>
+        <div class="m-spinner m-spinner--brand"></div>
     </div>
     <div class="m-grid m-grid--hor m-grid--root m-page" id="app">
     @yield('cuerpo')
     </div>
-<script src="{{mix('js/app.js')}}" type="text/javascript"></script>
-    @yield('scripts')
+    <script src="{{mix('js/app.bundle.js')}}" type="text/javascript"></script>
+    <script src="{{mix('js/app.js')}}" type="text/javascript"></script>
     @component('componentes.soporte')
     @endcomponent
+    @yield('scripts')
 </body>
 </html>
