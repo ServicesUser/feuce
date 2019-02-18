@@ -11,7 +11,9 @@
                             <li class="m-menu__item " aria-haspopup="true" v-for="(item,index) in menu" m-menu-submenu-toggle="hover" :key="index" :class="lvl1(item)">
                                 <a :href="item.url" class="m-menu__link ">
                                     <span class="m-menu__item-here"></span>
-                                    <span class="m-menu__link-text">{{item.name}}</span>
+                                    <div class="m-menu__link-text">
+                                        <i :class="item.icon" v-if="item.icon"></i> {{item.name}}
+                                    </div>
                                     <i class="m-menu__hor-arrow la la-angle-down" v-if="item.items"></i>
                                     <i class="m-menu__ver-arrow la la-angle-right" v-if="item.items"></i>
                                 </a>
@@ -49,9 +51,10 @@
             menu:[],
         }),
         mounted(){
-            Bus.$on('actualizar-menu',function(menu){
-                this.menu=menu;
+            Bus.$on('actualizar-menu',function(){
+                this.cargar();
             }.bind(this));
+
             this.cargar();
             console.log('%c Developed by GoldenBytes ', 'background: red; color: white');
         },
@@ -91,10 +94,9 @@
                     method: 'GET',
                     url: location.origin+'/app',
                 }).then((response) => {
-                    this.menu=response.data;
-                    //Bus.$emit('set-user',response.data.user);
-                    //Bus.$emit('set-notificaciones',response.data.notifications);
-                    //Bus.$emit('set-user-img',response.data.user);
+                    this.menu=response.data.menu;
+                    Bus.$emit('actualizar-info',response.data);
+                    $('body').removeClass('m-page--loading');
                 }).catch((error) => {
                     this.cargar();
                 });
