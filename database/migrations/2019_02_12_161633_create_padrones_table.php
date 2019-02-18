@@ -16,14 +16,14 @@ class CreatePadronesTable extends Migration
     {
         Schema::create('padrones', function (Blueprint $table) {
             $table->char('id_ca',4);
-            $table->unsignedInteger('id_cn');
-            $table->unsignedInteger('id_us');
+            $table->unsignedInteger('id_us')->nullable();
+            $table->string('ci_us',20);
             $table->timestamps();
 
             $table->foreign('id_us')->references('id')->on('users');
             $table->foreign('id_ca')->references('id_ca')->on('campanas');
         });
-        DB::unprepared('ALTER TABLE `padrones` ADD PRIMARY KEY (  `id_us` ,  `id_ca` )');
+        DB::unprepared('ALTER TABLE `padrones` ADD PRIMARY KEY ( `id_ca` ,`ci_us` )');
     }
 
     /**
