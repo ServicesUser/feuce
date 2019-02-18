@@ -31,8 +31,3 @@
     @component('componentes.usuario.pie')
     @endcomponent
 @endsection
-@section('scripts')
-    <script>
-        $('body').removeClass('m-page--loading');
-    </script>
-@endsection
