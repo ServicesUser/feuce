@@ -3,45 +3,43 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MenuController extends Controller
 {
     public function generado(){
-        $a['name']      =   "Publicaciones";
-        $a['icon']      =   "icon-briefcase";
+        $a['name']      =   "";
+        $a['icon']      =   "fa fa-home";
+        $a['url']       =   route('home');
+        $aux[]          =   $a;
+        unset($a);
+
+        $a['name']      =   "E-Voto";
+        $a['icon']      =   "fa fa-check";
         $a['url']       =   '#';
         $a['items'][]   =   [
-            'name'  =>  "Empleo fijo",
+            'name'  =>  "Nueva Asociación",
             'url'   =>  'empleo fijo',
+            'icon'  =>  'fa fa-building',
         ];
         $a['items'][]   =   [
-            'name'  =>  "Pasantías",
+            'name'  =>  "Nueva Elección",
             'url'   =>  'Pasantías',
-            'icon'  =>  'la la-meh-o',
-            'label' =>  2,
+            'icon'  =>  'fa fa-newspaper',
         ];
         $a['items'][]   =   [
-            'name'  =>  "Practicas pre-profesionales",
-            'url'   =>  '#',
+            'name'  =>  "Elecciones FEUCE-Q",
+            'url'   =>  'Pasantías',
+            'label' =>  '3h',
         ];
-        $a['items'][]   =   [
-            'name'  =>  "Internacional",
-            'url'   =>  'Internacional',
-        ];
-        $a['items'][]   =   [
-            'name'  =>  "Todos",
-            'url'   =>  'Todos',
-        ];
+
         $aux[]          =   $a;
         unset($a);
 
-        $a['name']      =   "Foro";
-        $a['icon']      =   "icon-layers";
-        $a['url']       =   'a asdasd';
-        $a['items']     =   null;
-        $aux[]          =   $a;
-        unset($a);
-
-        return response($aux);
+        return response([
+            'menu'  =>  $aux,
+            'user'  =>  Auth::user(),
+            'notifications' =>  Auth::user()->unreadNotifications
+        ]);
     }
 }
