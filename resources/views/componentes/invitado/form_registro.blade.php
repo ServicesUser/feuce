@@ -1,7 +1,7 @@
 <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}" class="m-login__form m-form">
     @csrf
     <div class="form-group m-form__group">
-        <input  type="text" class="form-control m-input" name="name" value="{{ old('name') }}" placeholder="Nombre"  required autofocus/>
+        <input  type="text" class="form-control m-input" name="name" value="{{ old('name') }}" placeholder="Nombre Apellido"  required autofocus/>
         @if ($errors->has('name'))
             <span class="form-control-feedback text-danger">
                 {{ $errors->first('name') }}
@@ -13,6 +13,14 @@
         @if ($errors->has('email'))
             <span class="form-control-feedback text-danger">
                 {{ $errors->first('email') }}
+            </span>
+        @endif
+    </div>
+    <div class="form-group m-form__group">
+        <input id="dni" type="text" class="form-control m-input" name="ci" placeholder="Cédula de Identidad" value="{{ old('ci') }}" required>
+        @if ($errors->has('ci'))
+            <span class="form-control-feedback text-danger">
+                {{ $errors->first('ci') }}
             </span>
         @endif
     </div>
