@@ -11,9 +11,9 @@
         <div class="m-dropdown__wrapper">
             <span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
             <div class="m-dropdown__inner">
-                <div class="m-dropdown__header m--align-center" v-if="notificaciones.length>1">
+                <div class="m-dropdown__header m--align-center" v-if="lista.length>1">
                     <span class="m-dropdown__header-title">
-                        {{notificaciones.length}} notificaciones
+                        {{lista.length}} notificaciones
                     </span>
                 </div>
                 <div class="m-dropdown__body">
@@ -21,7 +21,7 @@
                         <div class="m-scrollable" :m-scrollabledata-scrollable="true" data-max-height="250" data-mobile-max-height="200">
                             <div class="m-list-timeline m-list-timeline--skin-light">
                                 <div class="m-list-timeline__items">
-                                    <div class="m-list-timeline__item" v-for="item in notificaciones">
+                                    <div class="m-list-timeline__item" v-for="item in lista">
                                         <span class="m-list-timeline__badge m-list-timeline__badge--state1-success"></span>
                                         <a :href="item.url" class="m-list-timeline__text">
                                             {{item.mensaje}}
@@ -41,21 +41,17 @@
 </template>
 
 <script>
+    import {Bus} from '../../app';
     export default {
         name: "notificaciones",
         data:()=>({
             notificaciones:[],
             echo:null,
         }),
-        props:['usu'],
+        props:['usu','lista'],
         methods:{
             cargar:function(){
-                axios.options(window.location.origin+'/app/notificaciones')
-                    .then((response) => {
-                        if(response.data){
-                            this.notificaciones=response.data;
-                        }
-                    });
+                Bus.$emit('actualizar-menu');
             },
             fechaHum:function(fecha){
 
@@ -65,8 +61,8 @@
             this.cargar();
         },
         mounted(){
-            let usuario=this.usu.code;
-            Echo.private('usuario.'+usuario)
+            let usuario=this.usu.id;
+            Echo.private('App.User.'+usuario)
                 .notification((e) => {
                     toastr.info(e.mensaje,'',{onclick: function() {
                         if(e.url!==null)
