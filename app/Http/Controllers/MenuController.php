@@ -7,7 +7,17 @@ use Illuminate\Support\Facades\Auth;
 
 class MenuController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function votosMenu(){
+        return view('voto.index');
+    }
+
     public function generado(){
+        $usuario=Auth::user();
         $a['name']      =   "";
         $a['icon']      =   "fa fa-home";
         $a['url']       =   route('home');
@@ -16,29 +26,35 @@ class MenuController extends Controller
 
         $a['name']      =   "E-Voto";
         $a['icon']      =   "fa fa-check";
-        $a['url']       =   '#';
-        $a['items'][]   =   [
-            'name'  =>  "Nueva Asociación",
-            'url'   =>  'empleo fijo',
-            'icon'  =>  'fa fa-building',
-        ];
-        $a['items'][]   =   [
-            'name'  =>  "Nueva Elección",
-            'url'   =>  'Pasantías',
-            'icon'  =>  'fa fa-newspaper',
-        ];
-        $a['items'][]   =   [
-            'name'  =>  "Elecciones FEUCE-Q",
-            'url'   =>  'Pasantías',
-            'label' =>  '3h',
-        ];
+        $a['url']       =   route('voto.index');
+        if($usuario->id_ro===1){
+            $a['items'][]   =   [
+                'name'  =>  "Nueva Asociación",
+                'url'   =>  route('voto.admin'),
+                'icon'  =>  'fa fa-building',
+            ];
+        }
+        if($usuario->id_ro===2){
+            $a['items'][]   =   [
+                'name'  =>  "Nueva Elección",
+                'url'   =>  'Pasantías',
+                'icon'  =>  'fa fa-newspaper',
+            ];
+        }
+        if($usuario->id_ro===3){
+            $a['items'][]   =   [
+                'name'  =>  "Elecciones FEUCE-Q",
+                'url'   =>  'Pasantías',
+                'label' =>  '3h',
+            ];
 
+        }
         $aux[]          =   $a;
         unset($a);
 
         return response([
             'menu'  =>  $aux,
-            'user'  =>  Auth::user(),
+            'user'  =>  $usuario,
             'notifications' =>  Auth::user()->unreadNotifications
         ]);
     }
