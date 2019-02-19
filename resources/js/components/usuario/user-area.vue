@@ -45,8 +45,6 @@
 
 <script>
     import notificaciones from './notificaciones';
-    import perfil from './perfil-org';
-    import usuario from './perfil-usr';
     import {Bus} from '../../app';
     export default {
         name: "user-area",
