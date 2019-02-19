@@ -22,9 +22,11 @@ export let Bus = new Vue();
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('pie', require('./components/pie').default);
 Vue.component('user-area', require('./components/usuario/user-area').default);
 Vue.component('menu-us', require('./components/usuario/menu').default);
+Vue.component('menu-evoto', require('./components/usuario/evoto/menu-evoto').default);
+Vue.component('asociaciones', require('./components/usuario/evoto/asociaciones').default)
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
