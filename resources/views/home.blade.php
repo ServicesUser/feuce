@@ -1,5 +1,5 @@
 @extends('template.usuario')
-@section('titulo',"Ingresar")
+@section('titulo',"Inicio")
 @section('cuerpo')
     @component('componentes.usuario.cabecera')
     @endcomponent
