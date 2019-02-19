@@ -62,6 +62,7 @@
         },
         mounted(){
             let usuario=this.usu.id;
+            /*
             Echo.private('App.User.'+usuario)
                 .notification((e) => {
                     toastr.info(e.mensaje,'',{onclick: function() {
@@ -69,7 +70,7 @@
                             window.location.href=e.url;
                     }});
                     this.cargar();
-                });
+                });*/
         }
     }
 </script>
