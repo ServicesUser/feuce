@@ -14,11 +14,10 @@ class CreateCampanasTable extends Migration
     public function up()
     {
         Schema::create('campanas', function (Blueprint $table) {
-            $table->char('id_ca',4)->primary();
+            $table->char('id_ca',8)->primary();
             $table->unsignedInteger('id_us');
             $table->string('detalle_ca',500);
-            $table->string('llave_ca',500);
-            $table->boolean('estado_ca')->default(true);
+            $table->boolean('estado_ca')->default(false);
             $table->dateTime('desde_ca');
             $table->dateTime('vence_ca');
             $table->timestamps();

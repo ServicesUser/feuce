@@ -18,7 +18,7 @@ class CreateVotosTable extends Migration
             $table->unsignedBigInteger('papeleta_vo');
             $table->unsignedInteger('id_us');
             $table->unsignedInteger('id_cn');
-            $table->char('id_ca',4);
+            $table->char('id_ca',8);
             $table->char('firma_vo',128)->unique();
             $table->timestamps();
 

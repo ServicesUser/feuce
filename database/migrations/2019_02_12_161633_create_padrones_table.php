@@ -15,7 +15,7 @@ class CreatePadronesTable extends Migration
     public function up()
     {
         Schema::create('padrones', function (Blueprint $table) {
-            $table->char('id_ca',4);
+            $table->char('id_ca',8);
             $table->unsignedInteger('id_us')->nullable();
             $table->string('ci_us',20);
             $table->timestamps();
