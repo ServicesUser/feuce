@@ -18,7 +18,7 @@ class CreateCandidatosTable extends Migration
             $table->increments('id_cn');
             $table->unsignedInteger('id_tc');
             $table->unsignedInteger('id_mo')->nullable();
-            $table->char('id_ca',4);
+            $table->char('id_ca',8);
             $table->string('nombres_cn',300);
             $table->string('imagen_cn',300);
             $table->timestamps();
