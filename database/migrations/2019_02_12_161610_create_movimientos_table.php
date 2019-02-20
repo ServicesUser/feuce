@@ -16,6 +16,7 @@ class CreateMovimientosTable extends Migration
         Schema::create('movimientos', function (Blueprint $table) {
             $table->increments('id_mo');
             $table->string('titulo_mo');
+            $table->string('logo_mo')->nullable();
         });
     }
 
