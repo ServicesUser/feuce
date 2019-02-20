@@ -22,9 +22,11 @@ Route::group(['middleware' => 'verified'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::prefix('e-voto')->group(function () {
         Route::get('/','MenuController@votosMenu')->name('voto.index');
-        Route::get('/aso','AdministradorController@formulario')->name('voto.admin');
-        Route::post('/aso','AdministradorController@nuevaAso');
-        Route::options('/aso','AdministradorController@listaAso');
+        Route::get('/admin','AdministradorController@formulario')->name('voto.admin');
+        Route::post('/admin','AdministradorController@nuevaAso');
+        Route::options('/admin','AdministradorController@listaAso');
+
+        Route::get('/aso','AsociacionController@listar');
     });
 });
 
