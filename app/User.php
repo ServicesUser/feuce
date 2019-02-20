@@ -27,4 +27,8 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function campanas(){
+        return $this->hasMany(Campana::class,'id_us','id');
+    }
 }
