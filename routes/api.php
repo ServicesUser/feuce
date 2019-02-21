@@ -21,3 +21,11 @@ Route::get('a/{a}',function($a){
     $aux = new Hashids('',5,'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
     return (['encode'=>$aux->encode($a),'decode'=>$aux->decode($aux->encode($a))]);
 });
+
+Route::get('movimientos/{token}','OpcionesController@buscarLogo')->name('get.logo');
+
+Route::get('mov','OpcionesController@movimientos');
+Route::post('mov','OpcionesController@nuevoMov');
+
+Route::get('dig','OpcionesController@dignidades');
+Route::post('dig','OpcionesController@nuevaDig');
