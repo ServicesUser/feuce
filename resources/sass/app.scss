@@ -14,6 +14,8 @@
 //@import "./src/vendors/metronic/css/styles.css";
 @import "./src/sass/demo/demo2/style";
 @import '~vue-good-table/src/styles/style';
+@import '~vue-datetime/dist/vue-datetime.css';
+@import "~izitoast/dist/css/iziToast.min.css";
 
 .m-nav__link-icon-wrapper{
   background-color: #fff !important;
