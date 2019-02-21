@@ -25,7 +25,8 @@ export let Bus = new Vue();
 Vue.component('user-area', require('./components/usuario/user-area').default);
 Vue.component('menu-us', require('./components/usuario/menu').default);
 Vue.component('menu-evoto', require('./components/usuario/evoto/menu-evoto').default);
-Vue.component('asociaciones', require('./components/usuario/evoto/asociaciones').default)
+Vue.component('asociaciones', require('./components/usuario/evoto/asociaciones').default);
+Vue.component('campanas', require('./components/usuario/evoto/campanas').default)
 
 
 /**
