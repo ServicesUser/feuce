@@ -47,6 +47,14 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
+        'movimientos' => [
+            'driver' => 'local',
+            'root' => storage_path('movimientos_logos'),
+        ],
+        'candidatos' => [
+            'driver' => 'local',
+            'root' => storage_path('candidatos'),
+        ],
 
         'public' => [
             'driver' => 'local',
