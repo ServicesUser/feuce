@@ -17,6 +17,7 @@ class CreateTipoCandidatoTable extends Migration
         Schema::create('tipo_candidato', function (Blueprint $table) {
             $table->increments('id_tc');
             $table->string('titulo_tc');
+            $table->string('titulo2_tc')->nullable();
             $table->integer('orden_tc');
         });
         DB::table('tipo_candidato')->insert([

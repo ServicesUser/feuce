@@ -18,6 +18,7 @@ class CreatePadronesTable extends Migration
             $table->char('id_ca',8);
             $table->unsignedInteger('id_us')->nullable();
             $table->string('ci_us',20);
+            $table->string('email_us')->nullable();
             $table->timestamps();
 
             $table->foreign('id_us')->references('id')->on('users');
