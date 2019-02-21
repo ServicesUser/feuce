@@ -37,7 +37,7 @@ class MenuController extends Controller
         if($usuario->id_ro===2){
             $a['items'][]   =   [
                 'name'  =>  "Nueva Elección",
-                'url'   =>  'Pasantías',
+                'url'   =>  route('voto.aso'),
                 'icon'  =>  'fa fa-newspaper',
             ];
         }
