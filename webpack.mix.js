@@ -31,7 +31,7 @@ mix
 
             //'./node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
             './node_modules/perfect-scrollbar/dist/perfect-scrollbar.js',
-
+            './node_modules/izitoast/dist/js/iziToast.min.js',
             './resources/sass/src/js/framework/base/app.js',
             './resources/sass/src/js/framework/base/util.js',
             './resources/sass/src/js/framework/components/general/*.js',
