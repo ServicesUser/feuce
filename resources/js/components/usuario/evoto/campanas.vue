@@ -59,15 +59,10 @@
                                     Miembro {{index+1}} <button class=" btn btn-sm btn-outline-danger" v-if="registro.miembros.length>1" type="button" v-on:click="quitar(index)">Eliminar</button>
                                 </div>
                                 <div class="card-body">
-                                    <div class="form-group m-form__group" :class="errors.has('form-2.'+'nombre'+(index+1)) ? 'has-danger' : ''" >
-                                        <label class="form-control-label" >Nombre:</label>
-                                        <input type="text" class="form-control m-input" :name="'nombre'+(index+1)" :placeholder="'Nombre miembro'+(index+1)" v-model="item.nombre" v-validate="'required'"/>
-                                        <span class="m-form__help">{{errors.first('form-2.'+'nombre'+(index+1))}}</span>
-                                    </div>
                                     <div class="form-group m-form__group" :class="errors.has('form-2.'+'dignidad'+(index+1)) ? 'has-danger' : ''" >
                                         <label class="form-control-label" >Dignidad:</label>
                                         <select class="form-control m-input" :name="'dignidad'+(index+1)" v-model="item.dignidad" v-validate="'required'">
-                                            <option :value="item2.id" v-for="item2 in dignidades">{{item2.name}}</option>
+                                            <option :value="item2" v-for="item2 in dignidades">{{item2.name}}{{item2.name2 ? '/' :''}}{{item2.name2}}</option>
                                         </select>
                                         <span class="m-form__help">{{errors.first('form-2.'+'dignidad'+(index+1))}}</span>
                                     </div>
@@ -78,8 +73,13 @@
                                         </select>
                                         <span class="m-form__help">{{errors.first('form-2.'+'movimiento'+(index+1))}}</span>
                                     </div>
+                                    <div class="form-group m-form__group" :class="errors.has('form-2.'+'nombre'+(index+1)) ? 'has-danger' : ''" >
+                                        <label class="form-control-label">Nombre {{item.dignidad.name}}</label>
+                                        <input type="text" class="form-control m-input" :name="'nombre'+(index+1)" :placeholder="'Nombre miembro'+(index+1)" v-model="item.nombre" v-validate="'required'"/>
+                                        <span class="m-form__help">{{errors.first('form-2.'+'nombre'+(index+1))}}</span>
+                                    </div>
                                     <div class="form-group m-form__group" :class="errors.has('form-2.'+'foto'+(index+1)) ? 'has-danger' : ''" >
-                                        <label class="form-control-label" >Foto:</label>
+                                        <label class="form-control-label" >Foto {{item.dignidad.name}}:</label>
                                         <div class="">
                                             <input type="file" class="form-control-file" accept="image/*" :name="'foto'+(index+1)" v-on:change="previewFiles($event,item)"  v-validate="'required|image'" data-vv-as="image">
                                             <div class="">
@@ -87,6 +87,24 @@
                                             </div>
                                         </div>
                                         <span class="m-form__help">{{errors.first('form-2.'+'foto'+(index+1))}}</span>
+                                    </div>
+                                    <div v-if="item.dignidad.name2">
+                                        <hr>
+                                        <div class="form-group m-form__group" :class="errors.has('form-2.'+item.dignidad.name2+(index+1)) ? 'has-danger' : ''" >
+                                            <label class="form-control-label">Nombre {{item.dignidad.name2}}</label>
+                                            <input type="text" class="form-control m-input" :name="item.dignidad.name2+(index+1)" :placeholder="'Nombre '+item.dignidad.name2+(index+1)" v-model="item.nombre2" v-validate="'required'"/>
+                                            <span class="m-form__help">{{errors.first('form-2.'+item.dignidad.name2+(index+1))}}</span>
+                                        </div>
+                                        <div class="form-group m-form__group" :class="errors.has('form-2.'+'foto2'+(index+1)) ? 'has-danger' : ''" >
+                                            <label class="form-control-label" >Foto {{item.dignidad.name2}}:</label>
+                                            <div class="">
+                                                <input type="file" class="form-control-file" accept="image/*" :name="'foto'+(index+1)" v-on:change="previewFiles2($event,item)"  v-validate="'required|image'" data-vv-as="image">
+                                                <div class="">
+                                                    <img :src="item.foto2" class="img-responsive" height="70">
+                                                </div>
+                                            </div>
+                                            <span class="m-form__help">{{errors.first('form-2.'+'foto'+(index+1))}}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -103,22 +121,29 @@
                     <div class="m-portlet__body">
                         <div class="alert m-alert m-alert--default " :class="mensaje.clase" role="alert" v-html="mensaje.texto" ></div>
                         <div class="m-form__section m-form__section--first">
-                            <div class="form-group m-form__group" :class="errors.has('form-3.excel') ? 'has-danger' : ''" >
-                                <label class="form-control-label" >Archivo Excel:</label>
-                                <div class="">
-                                    <input type="file" class="form-control-file" accept="application/vnd.ms-excel" name="excel" v-on:change="previewFiles($event,registro)"  v-validate="'required|ext:xls,xlsx'" />
-                                </div>
-                                <span class="m-form__help">{{errors.first('form-3.excel')}}</span>
-                            </div>
+                            <vue-dropzone ref="myVueDropzone" id="dropzone" class="m-dropzone dropzone m-dropzone--primary dz-clickable" v-model="registro.excel"  :options="dropzoneOptions" @vdropzone-error="comprobarArchivo"  @vdropzone-success="uploadDone" name="excel" v-validate="'required'" ></vue-dropzone>
+                            <span class="m-form__help">{{errors.first('form-e.excel')}}</span>
                         </div>
+                        <a class="text-muted" data-toggle="tooltip" data-html="true" data-placement="top" :title="imagen" id="exa">
+                            Ejemplo <i class="fa fa-question-circle"></i>
+                        </a>
                     </div>
                     <div class="m-portlet__foot m-portlet__foot--fit">
                         <div class="m-form__actions m-form__actions">
                             <button type="button" class="btn btn-danger" v-on:click="paso--">Atrás</button>
-                            <button type="submit" class="btn btn-primary">Siguiente</button>
+                            <button type="submit" class="btn btn-success">Finalizar</button>
                         </div>
                     </div>
                 </form>
+                <div class="m-form m-form--state" v-if="paso===4">
+                    <div class="m-portlet__body">
+                        <br><br><br><br>
+                        <div class="text-center">
+                            Cargando
+                        </div>
+                        <br><br><br><br>
+                    </div>
+                </div>
             </div>
         </div>
         <div>
@@ -168,16 +193,23 @@
                             <form class="m-form" v-on:submit.prevent="nuevaDig" data-vv-scope="newDig">
                                 <div class="m-portlet__body">
                                     <div class="form-group m-form__group row" :class="errors.has('newDig.título') ? 'has-danger' : ''">
-                                        <label class="col-form-label col-lg-3">Título</label>
+                                        <label class="col-form-label col-lg-3">1er Título</label>
                                         <div class="col-lg-9">
-                                            <input type="text" class="form-control m-input" name="título" v-model="dignidad.name" v-validate="'required'">
+                                            <input type="text" class="form-control m-input" name="título" placeholder="Vocal" v-model="dignidad.name" v-validate="'required'">
                                             <div class="form-control-feedback">{{errors.first('newDig.título')}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group m-form__group row" :class="errors.has('newDig.título2') ? 'has-danger' : ''">
+                                        <label class="col-form-label col-lg-3">2do Título</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control m-input" name="título2" placeholder="Vocal Suplente" v-model="dignidad.name2" v-validate="'required'">
+                                            <div class="form-control-feedback">{{errors.first('newDig.título2')}}</div>
                                         </div>
                                     </div>
                                     <div class="form-group m-form__group row" :class="errors.has('newDig.rango') ? 'has-danger' : ''">
                                         <label class="col-form-label col-lg-3">Rango</label>
                                         <div class="col-lg-9">
-                                            <input type="text" class="form-control m-input" name="rango" v-validate="'required|integer'" v-model="dignidad.order">
+                                            <input type="text" class="form-control m-input" name="rango" placeholder="5" v-validate="'required|integer'" v-model="dignidad.order">
                                             <div class="form-control-feedback">{{errors.first('newDig.rango')}}</div>
                                         </div>
                                     </div>
@@ -238,6 +270,7 @@
     import VeeValidate,{Validator} from 'vee-validate';
     import es from 'vee-validate/dist/locale/es';
     import Datetime from 'vue-datetime';
+    import vue2Dropzone from 'vue2-dropzone';
     import { Settings } from 'luxon';
     Settings.defaultLocale = 'es';
     Vue.use(Datetime);
@@ -277,6 +310,14 @@
                 },
             ],
             rows: [],
+            dropzoneOptions: {
+                url: location.origin+'/app/archivo',
+                headers: { "X-CSRF-TOKEN": window.axios.defaults.headers.common['X-CSRF-TOKEN']},
+                paramName: 'excel',
+                acceptedFiles:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                maxFiles:1,
+                dictDefaultMessage: 'Arrastre y Suelte aquí un Archivo Excel',
+            },
             paso:1,
             mensaje:{
                 texto:'Se enviará un email a cada persona que conste en el padrón electoral con las instrucciones del proceso.',
@@ -285,7 +326,7 @@
             registro:{
                 detalle:'',
                 miembros:[],
-                foto:''
+                excel:''
             },
 
             movimientos:[],
@@ -293,6 +334,7 @@
 
             dignidad:{
                 name:'',
+                name2:'',
                 order:'',
             },
             movimiento:{
@@ -302,6 +344,7 @@
         }),
         components: {
             VueGoodTable,
+            vueDropzone: vue2Dropzone
         },
         watch:{
           paso:function(val){
@@ -323,10 +366,18 @@
 
           }
         },
+        computed:{
+            imagen:function(){
+                let a=location.origin+'/images/ejemplo.PNG'
+                return `<img src=${a} class="img-responsive exa" />`;
+            }
+        },
         methods:{
             agregar:function(){
                 let a = new Object();
-                a.foto='';
+                a.foto=null;
+                a.foto2=null;
+                a.dignidad={};
                 this.registro.miembros.push(a);
             },
             quitar:function(num){
@@ -337,7 +388,9 @@
                 this.$validator.validateAll(scope).then((result) => {
                     if (result) {
                         vm.paso++;
-                        console.log(scope);
+                        if(vm.paso===4){
+                            vm.nuevo();
+                        }
                     }else{
                         vm.mensaje={
                             texto:"Complete el formulario.",
@@ -345,6 +398,29 @@
                         };
                     }
                 });
+            },
+            comprobarArchivo:function(file){
+                this.registro.excel=null;
+                this.$refs.myVueDropzone.removeAllFiles();
+                iziToast.error({
+                    title: 'Error',
+                    message: file.name+" no es un Excel válido",
+                });
+            },
+            uploadDone:function(file, response){
+                if(response.val){
+                    this.registro.excel={file:response.archivo,cantidad:response.resultado};
+                    iziToast.success({
+                        title: 'Éxito',
+                        message: response.mensaje,
+                    });
+                }else{
+                    this.$refs.myVueDropzone.removeAllFiles();
+                    iziToast.error({
+                        title: 'Error',
+                        message: "Vuelva a intentar",
+                    });
+                }
             },
             nuevaDig:function(){
                 let vm=this;
@@ -425,22 +501,36 @@
                 });
             },
             previewFiles:function(e,item) {
-
                 let files = e.target.files || e.dataTransfer.files;
                 if (!files.length)
                     return;
-                //let image = new Image();
                 let reader = new FileReader();
-
                 reader.onload = (e) => {
                     item.foto = e.target.result;
                 };
                 reader.readAsDataURL(files[0]);
-                //item.foto = this.$refs['foto'+a].files;
+            },
+            previewFiles2:function(e,item) {
+                let files = e.target.files || e.dataTransfer.files;
+                if (!files.length)
+                    return;
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    item.foto2 = e.target.result;
+                };
+                reader.readAsDataURL(files[0]);
             },
             nuevo:function(){
+                let vm=this;
+                axios.post(location.origin+location.pathname,
+                vm.registro).then((response)=>{
 
-
+                }).catch((error) => {
+                    iziToast.error({
+                        title: 'Error',
+                        message: "Vuelva a intentar",
+                    });
+                });
             },
             cargar:function(){
                 let vm=this;
@@ -470,11 +560,18 @@
             this.cargarMov();
             this.cargarDig();
             this.agregar();
+        },
+        updated(){
+            $('[data-toggle="tooltip"]').tooltip({
+                animated: 'fade',
+                html: true
+            });
         }
-
     }
 </script>
 
 <style scoped>
-
+    .exa{
+        max-height: 600px;
+    }
 </style>
