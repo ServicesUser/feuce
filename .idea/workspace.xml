@@ -8,8 +8,6 @@
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OpcionesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OpcionesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_12_161227_create_tipo_candidato_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_02_12_161227_create_tipo_candidato_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_12_161611_create_candidatos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_02_12_161611_create_candidatos_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js.map" afterDir="false" />
@@ -28,65 +26,7 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="campanas.vue" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/usuario/evoto/campanas.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="64" column="108" lean-forward="true" selection-start-line="64" selection-start-column="108" selection-end-line="64" selection-end-column="108" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2019_02_12_161227_create_tipo_candidato_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_12_161227_create_tipo_candidato_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="19" column="38" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Movimiento.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Movimiento.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="8" column="38" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Dignidad.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Dignidad.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="8" column="51" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OpcionesController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OpcionesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
-              <folding>
-                <element signature="e#40#57#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="31" column="62" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -150,7 +90,6 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/template/invitado.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_02_12_161633_create_padrones_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_02_12_161653_create_votos_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_02_12_161530_create_campanas_table.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
@@ -175,6 +114,7 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_02_12_161611_create_candidatos_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OpcionesController.php" />
         <option value="$PROJECT_DIR$/resources/js/components/usuario/evoto/campanas.vue" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_02_12_161633_create_padrones_table.php" />
       </list>
     </option>
   </component>
@@ -430,12 +370,13 @@
       <workItem from="1550603540493" duration="13871000" />
       <workItem from="1550672214452" duration="831000" />
       <workItem from="1550673503376" duration="29765000" />
-      <workItem from="1550758709260" duration="25153000" />
+      <workItem from="1550758709260" duration="25506000" />
+      <workItem from="1550845499270" duration="607000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203888000" />
+    <option name="totallyTimeSpent" value="204848000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -448,7 +389,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1719" height="932" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32957393" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -457,7 +397,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32957393" />
       <window_info id="npm" order="2" sideWeight="0.50280374" side_tool="true" weight="0.26157546" />
       <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32957393" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49719626" visible="true" weight="0.28442574" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49719626" visible="true" weight="0.28803366" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -485,6 +425,51 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_12_161227_create_tipo_candidato_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Movimiento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Dignidad.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OpcionesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="31" column="62" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_12_161633_create_padrones_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
@@ -555,13 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_12_161633_create_padrones_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_12_161653_create_votos_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -573,9 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="591">
           <caret line="47" column="9" selection-start-line="25" selection-start-column="8" selection-end-line="47" selection-end-column="9" />
-          <folding>
-            <element signature="e#40#78#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -663,16 +638,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/vue2-dropzone/dist/vue2Dropzone.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/vue2-dropzone/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-997" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/vue2-dropzone/LICENSE">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -695,18 +664,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/excel.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.mix.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -736,19 +699,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/izitoast/dist/css/iziToast.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/voto/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/usuario/evoto/asociaciones.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1330">
           <caret line="164" column="49" selection-start-line="164" selection-start-column="30" selection-end-line="164" selection-end-column="49" />
-          <folding>
-            <element signature="e#4610#4656#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -756,9 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="87" column="115" selection-start-line="87" selection-start-column="106" selection-end-line="87" selection-end-column="115" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -780,9 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
           <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,7 +764,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OpcionesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
+        <state relative-caret-position="252">
           <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
           <folding>
             <element signature="e#40#57#0#PHP" expanded="true" />
@@ -824,10 +772,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_12_161633_create_padrones_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/usuario/evoto/campanas.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="64" column="108" lean-forward="true" selection-start-line="64" selection-start-column="108" selection-end-line="64" selection-end-column="108" />
+        <state relative-caret-position="14">
+          <caret line="97" column="147" selection-start-line="97" selection-start-column="147" selection-end-line="97" selection-end-column="147" />
         </state>
       </provider>
     </entry>
