@@ -18,12 +18,13 @@ class OpcionesController extends Controller
     }
 
     public function dignidades(){
-        return Dignidad::select('id_tc AS id','titulo_tc AS name')->where('id_tc','!=',1)->orderBy('orden_tc')->get();
+        return Dignidad::select('id_tc AS id','titulo_tc AS name','titulo2_tc AS name2')->where('id_tc','!=',1)->orderBy('orden_tc')->get();
     }
 
     public function nuevaDig(Request $datos){
         $validacion =   Validator::make($datos->all(),[
-            'name'      =>  'required|string|max:255|unique:tipo_candidato,titulo_tc',
+            'name'      =>  'required|string|max:255',
+            'name2'     =>  'string|max:255',
             'order'     =>  'required|integer',
         ]);
         if ($validacion->fails()) {
@@ -34,6 +35,7 @@ class OpcionesController extends Controller
         }else{
             $dignidad               =   new Dignidad();
             $dignidad->titulo_tc    =   $datos->name;
+            $dignidad->titulo2_tc   =   $datos->name2;
             $dignidad->orden_tc     =   $datos->order;
             $dignidad->save();
             return (['val'=>true,'mensaje'=>$datos->name.' se ha guardado']);
