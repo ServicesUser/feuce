@@ -55,6 +55,10 @@ return [
             'driver' => 'local',
             'root' => storage_path('candidatos'),
         ],
+        'excels' => [
+            'driver' => 'local',
+            'root' => storage_path('excel'),
+        ],
 
         'public' => [
             'driver' => 'local',
