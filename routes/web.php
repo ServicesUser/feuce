@@ -29,10 +29,12 @@ Route::group(['middleware' => 'verified'], function() {
 
 
         Route::get('/aso','AsociacionController@vista')->name('voto.aso');
+        Route::post('/aso','AsociacionController@nuevaCampania');
         Route::options('/aso','AsociacionController@listar');
     });
 });
 
 Route::prefix('app')->group(function () {
     Route::get('/','MenuController@generado');
+    Route::post('/archivo','MenuController@subirExcel');
 });
