@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -37,4 +40,9 @@ Route::group(['middleware' => 'verified'], function() {
 Route::prefix('app')->group(function () {
     Route::get('/','MenuController@generado');
     Route::post('/archivo','MenuController@subirExcel');
+
+    Route::get('/prueba',function(){
+        $var=\App\Campana::find('88e38716');
+        return response()->json($var->padron);
+    });
 });
