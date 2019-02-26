@@ -23,6 +23,7 @@ Route::get('a/{a}',function($a){
 });
 
 Route::get('movimientos/{token}','OpcionesController@buscarLogo')->name('get.logo');
+Route::get('candidatos/{token}','OpcionesController@buscarCandidato')->name('get.foto');
 
 Route::get('mov','OpcionesController@movimientos');
 Route::post('mov','OpcionesController@nuevoMov');
