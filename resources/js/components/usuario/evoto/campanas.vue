@@ -158,14 +158,14 @@
                             <form class="m-form" v-on:submit.prevent="nuevoMov" data-vv-scope="newMov">
                                 <div class="m-portlet__body">
                                     <div class="form-group m-form__group row" :class="errors.has('newMov.nombre') ? 'has-danger' : ''">
-                                        <label class="col-form-label col-lg-3">Nombre</label>
+                                        <label class="col-form-label col-lg-3">Nombre*</label>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control m-input" name="nombre" v-model="movimiento.name" v-validate="'required'">
                                             <div class="form-control-feedback">{{errors.first('newMov.nombre')}}</div>
                                         </div>
                                     </div>
                                     <div class="form-group m-form__group row" :class="errors.has('newMov.logo') ? 'has-danger' : ''">
-                                        <label class="col-form-label col-lg-3">Logo</label>
+                                        <label class="col-form-label col-lg-3">Logo*</label>
                                         <div class="col-lg-9">
                                             <input type="file" name="logo" v-validate="'required|image'" accept="image/*" v-on:change="previewFiles($event,movimiento)" data-vv-as="image">
                                             <img :src="movimiento.foto" class="img-responsive" height="70">
@@ -193,7 +193,7 @@
                             <form class="m-form" v-on:submit.prevent="nuevaDig" data-vv-scope="newDig">
                                 <div class="m-portlet__body">
                                     <div class="form-group m-form__group row" :class="errors.has('newDig.título') ? 'has-danger' : ''">
-                                        <label class="col-form-label col-lg-3">1er Título</label>
+                                        <label class="col-form-label col-lg-3">1er Título*</label>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control m-input" name="título" placeholder="Vocal" v-model="dignidad.name" v-validate="'required'">
                                             <div class="form-control-feedback">{{errors.first('newDig.título')}}</div>
@@ -202,12 +202,12 @@
                                     <div class="form-group m-form__group row" :class="errors.has('newDig.título2') ? 'has-danger' : ''">
                                         <label class="col-form-label col-lg-3">2do Título</label>
                                         <div class="col-lg-9">
-                                            <input type="text" class="form-control m-input" name="título2" placeholder="Vocal Suplente" v-model="dignidad.name2" v-validate="'required'">
+                                            <input type="text" class="form-control m-input" name="título2" placeholder="Vocal Suplente" v-model="dignidad.name2" >
                                             <div class="form-control-feedback">{{errors.first('newDig.título2')}}</div>
                                         </div>
                                     </div>
                                     <div class="form-group m-form__group row" :class="errors.has('newDig.rango') ? 'has-danger' : ''">
-                                        <label class="col-form-label col-lg-3">Rango</label>
+                                        <label class="col-form-label col-lg-3">Rango*</label>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control m-input" name="rango" placeholder="5" v-validate="'required|integer'" v-model="dignidad.order">
                                             <div class="form-control-feedback">{{errors.first('newDig.rango')}}</div>
