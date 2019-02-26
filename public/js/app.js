@@ -60850,7 +60850,7 @@ var render = function() {
                         _c(
                           "label",
                           { staticClass: "col-form-label col-lg-3" },
-                          [_vm._v("Nombre")]
+                          [_vm._v("Nombre*")]
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "col-lg-9" }, [
@@ -60903,7 +60903,7 @@ var render = function() {
                         _c(
                           "label",
                           { staticClass: "col-form-label col-lg-3" },
-                          [_vm._v("Logo")]
+                          [_vm._v("Logo*")]
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "col-lg-9" }, [
@@ -61001,7 +61001,7 @@ var render = function() {
                         _c(
                           "label",
                           { staticClass: "col-form-label col-lg-3" },
-                          [_vm._v("1er Título")]
+                          [_vm._v("1er Título*")]
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "col-lg-9" }, [
@@ -61071,12 +61071,6 @@ var render = function() {
                                 rawName: "v-model",
                                 value: _vm.dignidad.name2,
                                 expression: "dignidad.name2"
-                              },
-                              {
-                                name: "validate",
-                                rawName: "v-validate",
-                                value: "required",
-                                expression: "'required'"
                               }
                             ],
                             staticClass: "form-control m-input",
@@ -61119,7 +61113,7 @@ var render = function() {
                         _c(
                           "label",
                           { staticClass: "col-form-label col-lg-3" },
-                          [_vm._v("Rango")]
+                          [_vm._v("Rango*")]
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "col-lg-9" }, [
