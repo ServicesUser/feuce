@@ -24,7 +24,7 @@ class OpcionesController extends Controller
     public function nuevaDig(Request $datos){
         $validacion =   Validator::make($datos->all(),[
             'name'      =>  'required|string|max:255',
-            'name2'     =>  'string|max:255',
+            'name2'     =>  'nullable|string|max:255',
             'order'     =>  'required|integer',
         ]);
         if ($validacion->fails()) {
@@ -96,6 +96,15 @@ class OpcionesController extends Controller
     public function buscarLogo($token=null){
         try {
             $archivo = Storage::disk('movimientos')->get($token);
+            return Image::make($archivo)->response();
+        } catch (FileNotFoundException $e) {
+            abort(404);
+        }
+    }
+
+    public function buscarCandidato($token=null){
+        try {
+            $archivo = Storage::disk('candidatos')->get($token);
             return Image::make($archivo)->response();
         } catch (FileNotFoundException $e) {
             abort(404);
